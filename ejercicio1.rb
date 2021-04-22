@@ -1,5 +1,5 @@
 class Person
-    attr_accessor :first,:last,:age
+    attr_accessor :first_name,:last_name,:age
     def initialize(first, last, age)
         @first_name = first
         @last_name = last
@@ -37,3 +37,7 @@ class Teacher < Person
         puts "Hola. Soy uno de los apoderados. Mi nombre es #{self.first_name} #{self.last_name}."
     end
 end
+
+student = Student.new('tomas','briones',18)
+student.talk
+student.introduce
