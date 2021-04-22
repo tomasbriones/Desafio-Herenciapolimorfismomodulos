@@ -34,3 +34,30 @@ module Alimentacion
         end
     end
 end
+
+class Animal
+    include Alimentacion
+    
+    attr_reader :name
+    def initialize(name)
+        @name = name
+    end
+end
+
+class Ave < Animal
+end
+
+class Mamifero < Animal
+end
+
+class Insecto < Animal
+end
+
+class Pinguino < Ave
+end
+
+class Paloma < Ave
+end
+
+class Pato < Ave
+end
