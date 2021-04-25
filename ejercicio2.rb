@@ -4,7 +4,7 @@ module Habilidades
             'Estoy volandooooo!'
         end
         def aterrizar
-        'Estoy cansado de volar, voy a aterrizar'
+            'Estoy cansado de volar, voy a aterrizar'
         end
     end
     module Nadador
@@ -37,6 +37,7 @@ end
 
 class Animal
     include Alimentacion
+    include Habilidades
     
     attr_reader :name
     def initialize(name)
@@ -45,12 +46,18 @@ class Animal
 end
 
 class Ave < Animal
+    include Herbivoro
+    include Volador
 end
 
 class Mamifero < Animal
+    include Caminante
+    include Carnivoro
 end
 
 class Insecto < Animal
+    include Volador
+    include Herbivoro
 end
 
 class Pinguino < Ave
@@ -61,3 +68,27 @@ end
 
 class Pato < Ave
 end
+
+class Perro < Mamifero
+end
+
+class Gato < Mamifero   
+end
+
+class Vaca < Mamifero   
+end
+
+class Mosca < Insecto   
+end
+
+class Mariposa < Insecto   
+end
+
+class Abeja < Insecto   
+end
+
+pinguino = Ave.new("pinguino magallanico")
+puts pinguino.name
+puts pinguino.comer
+puts pinguino.volar
+puts pinguino.aterrizar
